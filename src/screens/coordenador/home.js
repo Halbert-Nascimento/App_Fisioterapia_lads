@@ -3,13 +3,15 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "../../styles/styleHomeGeral";
 
+const nome = "Nome do coordenador";
+
 export default function Home() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.viewAzul}>
       <View style={styles.viewTopo}>
-        <Text style={styles.textoHome}>Olá, Coordenador</Text>
+        <Text style={styles.textoHome}>Olá, {nome}</Text>
         <Image
           source={require("../../../assets/Logo_iesgo.png")}
           style={styles.logoIesgo}
@@ -34,7 +36,7 @@ export default function Home() {
               source={require("../../../assets/add-user-friends-svgrepo-com.png")}
               style={styles.imagemBotao}
             />
-            <Text style={styles.textoBotao}>Cadastrar Fisioterapeuta</Text>
+            <Text style={styles.textoBotao}>Cadastrar Aluno</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoServico}>
@@ -43,15 +45,7 @@ export default function Home() {
               style={styles.imagemBotao}
             />
             <Text style={styles.textoBotao}>Gerenciar Alunos</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botaoServico}>
-            <Image
-              source={require("../../../assets/whatsapp-svgrepo-com.png")}
-              style={styles.imagemBotao}
-            />
-            <Text style={styles.textoBotao}>Suporte</Text>
-          </TouchableOpacity>
+          </TouchableOpacity>          
 
           <TouchableOpacity style={styles.botaoServico}>
             <Image
@@ -67,6 +61,14 @@ export default function Home() {
               style={styles.imagemBotao}
             />
             <Text style={styles.textoBotao}>Ficha de evolução</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoServico}>
+            <Image
+              source={require("../../../assets/whatsapp-svgrepo-com.png")}
+              style={styles.imagemBotao}
+            />
+            <Text style={styles.textoBotao}>Suporte</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -5,9 +5,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import Home from "../screens/fisioterapeuta/Home";
 import AtendimentosTelas from "../screens/fisioterapeuta/AtendimentosTela";
 import RelatorioEvolucao from "../screens/fisioterapeuta/RelatorioEvolucaoTela";
-import PreencherProntuarioTela from "../screens/fisioterapeuta/PreencherProntuarioTela";
+// import PreencherProntuarioTela from "../screens/fisioterapeuta/PreencherProntuarioTela";
 import RelatorioPaciente from "../screens/fisioterapeuta/relatorioPaciente";
-import EnviarFichaEstagio from "../screens/fisioterapeuta/enviarFichaEstagio";
+// import EnviarFichaEstagio from "../screens/fisioterapeuta/enviarFichaEstagio";
 // import Perfil from "../screens/paciente/perfil";
 // import Cadastro from "../screens/paciente/cadastro";
 // import Login from "../screens/paciente/login";
@@ -36,8 +36,8 @@ export default function Test_RoutesPaciente(){
       <Drawer.Screen name="Meus atendimentos" component={AtendimentosTelas}/> 
       <Drawer.Screen name="Relatorio de paciente" component={RelatorioPaciente}/> 
       <Drawer.Screen name="Relatorio de evolução médica" component={RelatorioEvolucao}/> 
-      <Drawer.Screen name="Enviar ficha de estagio" component={EnviarFichaEstagio}/> 
-      <Drawer.Screen name="Preencher Prontuario" component={PreencherProntuarioTela}/> 
+      {/* <Drawer.Screen name="Enviar ficha de estagio" component={EnviarFichaEstagio}/>  // remover link */}
+      {/* <Drawer.Screen name="Preencher Prontuario" component={PreencherProntuarioTela}/> //remover e acessivel somente pelo link do paciente */}
       <Drawer.Screen name="Suporte" component={Home}/> 
       {/* <Drawer.Screen name="Solicitar atendimento" component={Atendimento} /> */}
       {/* <Drawer.Screen name="Meus Agendamentos" component={MeusAgendamentos} /> */}

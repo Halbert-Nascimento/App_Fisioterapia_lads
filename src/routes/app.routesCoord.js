@@ -11,7 +11,7 @@ import Patient from "../screens/coordenador/patient";
 import PatientDetails from "../screens/coordenador/patientDetails";
 import Prontuario from "../screens/coordenador/prontuario";
 
-import HomePaciente from "../screens/paciente/home"
+
 const Drawer = createDrawerNavigator();
 
 
@@ -32,15 +32,17 @@ export default function AppRoutesCoord(){
 
       <Drawer.Screen name="Home" component={Home} options={{headerTitle: ""}}/> 
       <Drawer.Screen name="Todos Agendamentos" component={Agendamentos} />
-      <Drawer.Screen name="Cadastrar Fisioterapeuta" component={CreateFisio} />
+      <Drawer.Screen name="Cadastrar Aluno" component={CreateFisio} />
       <Drawer.Screen name="Gerenciar Alunos" component={Students} />
 
       {/* Detalhes do paciente e prontuario será uma stack navigation */}
-      <Drawer.Screen name="Detalhes do Aluno" component={StudentDetails} />
       <Drawer.Screen name="Pacientes" component={Patient} />
-      <Drawer.Screen name="Detalhes do Paciente" component={PatientDetails} />
-      <Drawer.Screen name="Prontuario" component={Prontuario} />
-      <Drawer.Screen name="Home paciente" component={HomePaciente} options={{headerTitle: ""}} />
+
+      {/* remover esses links acesso pelo menu individual de pacienete e aluno */}
+      {/* <Drawer.Screen name="Detalhes do Aluno (remover)" component={StudentDetails} /> */}
+      {/* <Drawer.Screen name="Detalhes do Paciente (remover)" component={PatientDetails} /> */}
+      <Drawer.Screen name="Prontuario (remover)" component={Prontuario} />
+      
     
     </Drawer.Navigator>   
 

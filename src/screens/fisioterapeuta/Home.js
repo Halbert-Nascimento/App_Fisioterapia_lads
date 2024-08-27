@@ -50,13 +50,7 @@ export default function Home() {
                     <Text style={styles.textoBotao}>Relatorio de Paciente</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.botaoServico} onPress={() => Linking.openURL('https://wa.me/5561998738838')}>
-                    <Image
-                    source={require("../../../assets/imagensFisioterapeuta/Suporte2.png")}
-                    style={styles.imagemBotao}
-                    />
-                    <Text style={styles.textoBotao}>Suporte</Text>
-                </TouchableOpacity>
+                
 
                 <TouchableOpacity style={styles.botaoServico}>
                     <Image
@@ -66,20 +60,13 @@ export default function Home() {
                     <Text style={styles.textoBotao}>Relatorio de Evolução</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.botaoServico}>
-                    <Image
-                    source={require("../../../assets/imagensFisioterapeuta/Estagio.png")}
-                    style={styles.imagemBotao}
-                    />
-                    <Text style={styles.textoBotao}>Enviar Ficha de Estagio</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity style={styles.botaoServico}>
+                <TouchableOpacity style={styles.botaoServico} onPress={() => Linking.openURL('https://wa.me/5561998738838')}>
                     <Image
-                    source={require("../../../assets/imagensFisioterapeuta/Prontuario.png")}
+                    source={require("../../../assets/imagensFisioterapeuta/Suporte2.png")}
                     style={styles.imagemBotao}
                     />
-                    <Text style={styles.textoBotao}>Preencher Prontuario</Text>
+                    <Text style={styles.textoBotao}>Suporte</Text>
                 </TouchableOpacity>
        
 
