@@ -11,10 +11,10 @@ Este projeto foi criado usando Expo e configurações básicas de navegação Dr
   npm install -g expo-cli
  --- 
 ### 1.Clone o repositório (ou copie o projeto para a nova máquina):
-    git clone <URL_DO_REPOSITÓRIO>
+    git clone https://github.com/Halbert-Nascimento/App_Fisioterapia_lads.git
 
 #### Navegue até o diretório do projeto:
-    cd MyProjectJS
+    cd App_fisioterapia
 
 ### 2.Instale as dependências:
     npm install
