@@ -35,24 +35,24 @@ export default function Home() {
         <Text style={styles.textoHomeBranco}>O que você precisa hoje?</Text>
 
         <View style={styles.viewBotao}>
-          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Atendimento')}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Solicitar atendimento')}>
             <Image source={require('../../../assets/imagensPaciente/Calendar2.png')} style={styles.imagemBotao} />
             <Text style={styles.textoBotao}>Solicitar Atendimento</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('MeusAgendamentos')}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Meus Agendamentos')}>
             <Image source={require('../../../assets/imagensPaciente/Agendamento3.png')} style={styles.imagemBotao} />
             <Text style={styles.textoBotao}>Meus Agendamentos</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Meu perfil')}>
+            <Image source={require('../../../assets/imagensPaciente/Perfil2.png')} style={styles.imagemBotao} />
+            <Text style={styles.textoBotao}>Meu Perfil</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoServico}>
             <Image source={require('../../../assets/imagensPaciente/Suporte2.png')} style={styles.imagemBotao} />
             <Text style={styles.textoBotao}>Suporte</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Perfil')}>
-            <Image source={require('../../../assets/imagensPaciente/Perfil2.png')} style={styles.imagemBotao} />
-            <Text style={styles.textoBotao}>Meu Perfil</Text>
           </TouchableOpacity>
         </View>
       </View>

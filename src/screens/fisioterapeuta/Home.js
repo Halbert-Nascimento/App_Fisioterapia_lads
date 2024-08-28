@@ -34,7 +34,7 @@ export default function Home() {
             <Text style={styles.textoHomeBranco}>O que você precisa hoje?</Text>
 
             <View style={styles.viewBotao}>
-                <TouchableOpacity style={styles.botaoServico}>
+                <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Meus atendimentos")}>
                     <Image
                     source={require("../../../assets/Calendar2.png")}
                     style={styles.imagemBotao}
@@ -42,7 +42,7 @@ export default function Home() {
                     <Text style={styles.textoBotao}>Meus Atendimentos</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.botaoServico}>
+                <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Relatorio de pacientes")}>
                     <Image
                     source={require("../../../assets/imagensFisioterapeuta/Relatoriopaciente.png")}
                     style={styles.imagemBotao}
@@ -52,7 +52,7 @@ export default function Home() {
 
                 
 
-                <TouchableOpacity style={styles.botaoServico}>
+                <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Relatorio de evolução médica")}>
                     <Image
                     source={require("../../../assets/imagensFisioterapeuta/Relatorioevolucao.png")}
                     style={styles.imagemBotao}
@@ -61,7 +61,7 @@ export default function Home() {
                 </TouchableOpacity>
 
 
-                <TouchableOpacity style={styles.botaoServico} onPress={() => Linking.openURL('https://wa.me/5561998738838')}>
+                <TouchableOpacity style={styles.botaoServico} onPress={() => Linking.openURL('https://wa.me/')}>
                     <Image
                     source={require("../../../assets/imagensFisioterapeuta/Suporte2.png")}
                     style={styles.imagemBotao}

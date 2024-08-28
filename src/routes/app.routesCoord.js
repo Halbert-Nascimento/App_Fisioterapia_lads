@@ -10,6 +10,11 @@ import StudentDetails from "../screens/coordenador/studentDetails";
 import Patient from "../screens/coordenador/patient";
 import PatientDetails from "../screens/coordenador/patientDetails";
 import Prontuario from "../screens/coordenador/prontuario";
+import pacientes from "../screens/query/queryPacientes"
+
+// importar para navegão stack
+// import PatientStack from './StackNavigator'; // posso apagar esse tela não esta usando
+
 
 
 const Drawer = createDrawerNavigator();
@@ -17,34 +22,36 @@ const Drawer = createDrawerNavigator();
 
 export default function AppRoutesCoord(){
   return (
-    <Drawer.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#00005d",
-          shadowOpacity: 0,
-          elevation: 0,
-          borderBottomWidth: 0,
-        },
-        headerTintColor: "#fff",
-        headerTitleAlign: "center",
-      }}
-    >
-
-      <Drawer.Screen name="Home" component={Home} options={{headerTitle: ""}}/> 
-      <Drawer.Screen name="Todos Agendamentos" component={Agendamentos} />
-      <Drawer.Screen name="Cadastrar Aluno" component={CreateFisio} />
-      <Drawer.Screen name="Gerenciar Alunos" component={Students} />
-
-      {/* Detalhes do paciente e prontuario será uma stack navigation */}
-      <Drawer.Screen name="Pacientes" component={Patient} />
-
-      {/* remover esses links acesso pelo menu individual de pacienete e aluno */}
-      {/* <Drawer.Screen name="Detalhes do Aluno (remover)" component={StudentDetails} /> */}
-      {/* <Drawer.Screen name="Detalhes do Paciente (remover)" component={PatientDetails} /> */}
-      <Drawer.Screen name="Prontuario (remover)" component={Prontuario} />
-      
     
-    </Drawer.Navigator>   
+      <Drawer.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#00005d",
+            shadowOpacity: 0,
+            elevation: 0,
+            borderBottomWidth: 0,
+          },
+          headerTintColor: "#fff",
+          headerTitleAlign: "center",
+        }}
+      >
+
+        <Drawer.Screen name="Home" component={Home} options={{headerTitle: ""}}/> 
+        <Drawer.Screen name="Todos Agendamentos" component={Agendamentos} />
+        <Drawer.Screen name="Cadastrar Aluno" component={CreateFisio} />
+        <Drawer.Screen name="Gerenciar Alunos" component={Students} />
+
+        {/* Detalhes do paciente e prontuario será uma stack navigation */}
+        <Drawer.Screen name="Todos Pacientes" component={pacientes} />
+
+        {/* remover esses links acesso pelo menu individual de pacienete e aluno */}
+        {/* <Drawer.Screen name="Detalhes do Aluno (remover)" component={StudentDetails} /> */}
+        {/* <Drawer.Screen name="Detalhes do Paciente (remover)" component={PatientDetails} /> */}
+        <Drawer.Screen name="Prontuario (remover)" component={Prontuario} />
+        
+      
+      </Drawer.Navigator>   
+    
 
   );
 }

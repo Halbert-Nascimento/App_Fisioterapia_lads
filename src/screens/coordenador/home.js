@@ -23,7 +23,7 @@ export default function Home() {
         <Text style={styles.textoHomeBranco}>O que você precisa hoje?</Text>
 
         <View style={styles.viewBotao}>
-          <TouchableOpacity style={styles.botaoServico}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Todos Agendamentos")}>
             <Image
               source={require("../../../assets/Calendar2.png")}
               style={styles.imagemBotao}
@@ -31,7 +31,7 @@ export default function Home() {
             <Text style={styles.textoBotao}>Todos os Agendamentos</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.botaoServico}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Cadastrar Aluno")}>
             <Image
               source={require("../../../assets/add-user-friends-svgrepo-com.png")}
               style={styles.imagemBotao}
@@ -39,7 +39,7 @@ export default function Home() {
             <Text style={styles.textoBotao}>Cadastrar Aluno</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.botaoServico}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Gerenciar Alunos")}>
             <Image
               source={require("../../../assets/settings-svgrepo-com.png")}
               style={styles.imagemBotao}
@@ -47,7 +47,7 @@ export default function Home() {
             <Text style={styles.textoBotao}>Gerenciar Alunos</Text>
           </TouchableOpacity>          
 
-          <TouchableOpacity style={styles.botaoServico}>
+          <TouchableOpacity style={styles.botaoServico}  onPress={() => navigation.navigate("Todos Pacientes")}>
             <Image
               source={require("../../../assets/report-svgrepo-com.png")}
               style={styles.imagemBotao}
@@ -55,7 +55,7 @@ export default function Home() {
             <Text style={styles.textoBotao}>Relatorio dos pacientes</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.botaoServico}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate("Todos Pacientes")}>
             <Image
               source={require("../../../assets/tasks-badged-svgrepo-com.png")}
               style={styles.imagemBotao}
