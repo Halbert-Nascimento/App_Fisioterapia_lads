@@ -7,10 +7,10 @@ import Agendamentos from "../screens/coordenador/agendamentos";
 import CreateFisio from "../screens/coordenador/createFisio";
 import Students from "../screens/coordenador/students";
 import StudentDetails from "../screens/coordenador/studentDetails";
-import Patient from "../screens/coordenador/patient";
+// import Patient from "../screens/coordenador/patient";
 import PatientDetails from "../screens/coordenador/patientDetails";
 import Prontuario from "../screens/coordenador/prontuario";
-import pacientes from "../screens/query/queryPacientes"
+import pacientes from "../screens/coordenador/queryPacientes"
 
 // importar para navegão stack
 // import PatientStack from './StackNavigator'; // posso apagar esse tela não esta usando

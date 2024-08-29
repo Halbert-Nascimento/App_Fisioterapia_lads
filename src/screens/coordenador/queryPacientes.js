@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image, Button } from 'react-native';
-import ModalAgendamentoCoord from './ModalAgendamentoCoord';
+import ModalAgendamentoCoord from './pacienteModalAgendamentoCoord';
 import button from '../../../assets/button.png';
 import iconPendente from '../../../assets/pendente.png';
 import iconCancelado from '../../../assets/cancelado.png';
-import CancelModal from './CancelModal';
+import CancelModal from './pacienteCancelModal';
 
 
 
