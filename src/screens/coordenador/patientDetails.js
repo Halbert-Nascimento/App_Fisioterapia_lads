@@ -24,10 +24,16 @@ const CustomTextInput = React.forwardRef(
 );
 
 const inputFields = [
-  { placeholder: "Nome Completo", keyboardType: "default" },
-  { placeholder: "N° Matricula", keyboardType: "phone-pad" },
-  { placeholder: "Semestre", keyboardType: "email-address" },
-  { placeholder: "Email", keyboardType: "numeric" },
+  { placeholder: "Nome:", keyboardType: "default" },
+  { placeholder: "Telefone:", keyboardType: "phone-pad" },
+  { placeholder: "Email:", keyboardType: "email-address" },
+  { placeholder: "CPF:", keyboardType: "default" },
+  { placeholder: "Data de Nascimento:", keyboardType: "date" },
+  { placeholder: "Profissão:", keyboardType: "default" },
+  { placeholder: "Sexo:", keyboardType: "default" },
+  { placeholder: "Marcar Agendamento:", keyboardType: "default" },
+  { placeholder: "Aluno Responsavel:", keyboardType: "default" },
+  // { placeholder: "nmero", keyboardType: "numeric" },
 ];
 
 const students = [
@@ -53,7 +59,7 @@ export default function StudentDetails() {
       ))}
 
       <TouchableOpacity style={styles.saveButton} activeOpacity={0.7}>
-        <Text style={styles.saveButtonText}>Ver pacientes</Text>
+        <Text style={styles.saveButtonText}>Salvar informações</Text>
       </TouchableOpacity>
     </ScrollView>
   );

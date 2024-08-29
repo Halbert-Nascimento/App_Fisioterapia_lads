@@ -12,6 +12,7 @@ import PatientDetails from "../screens/coordenador/patientDetails";
 import Prontuario from "../screens/coordenador/prontuario";
 import pacientes from "../screens/coordenador/queryPacientes"
 
+
 // importar para navegão stack
 // import PatientStack from './StackNavigator'; // posso apagar esse tela não esta usando
 
@@ -46,7 +47,7 @@ export default function AppRoutesCoord(){
 
         {/* remover esses links acesso pelo menu individual de pacienete e aluno */}
         {/* <Drawer.Screen name="Detalhes do Aluno (remover)" component={StudentDetails} /> */}
-        {/* <Drawer.Screen name="Detalhes do Paciente (remover)" component={PatientDetails} /> */}
+        <Drawer.Screen name="Detalhes do Paciente (remover)" component={PatientDetails} />
         <Drawer.Screen name="Prontuario (remover)" component={Prontuario} />
         
       

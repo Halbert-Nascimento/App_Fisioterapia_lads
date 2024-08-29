@@ -42,7 +42,7 @@ export default StyleSheet.create({
     marginBottom: 20,
     position: 'absolute',
     marginRight: Platform.OS !== 'web' ? 100 : '69%',
-    fontFamily: 'Inter-Bold',
+    // fontFamily: 'Inter-Bold',
     color: '#484848',
   },
   input: {
@@ -62,7 +62,7 @@ export default StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 4,
     elevation: 5,
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
     fontStyle: 'italic',
   },
   loginButton: {
@@ -83,7 +83,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     marginTop: 5,
-    fontFamily: 'Inter-Bold',
+    // fontFamily: 'Inter-Bold',
   },
   viewSign: {
     flexDirection: 'row',
@@ -141,14 +141,14 @@ export default StyleSheet.create({
     position: 'absolute',
     left: 10,
     top: 10,
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   textoMf: {
     color: (props) => (props.selected ? '#FFFFFF' : '#000000'),
     fontWeight: 'bold',
     fontSize: 12,
     textAlign: 'center',
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   espacoPicker: {
     height: 40,
@@ -174,7 +174,7 @@ export default StyleSheet.create({
   estadoCivil: {
     height: 40,
     width: '100%',
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
     alignItems: 'center',
   },
   pickerTexto: {
@@ -192,7 +192,7 @@ export default StyleSheet.create({
   },
   textSignup: {
     fontSize: 14,
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   signup: {
     // Estilos adicionais, se necessário
@@ -267,7 +267,7 @@ export default StyleSheet.create({
   textoBotao: {
     textAlign: 'center',
     fontSize: 12,
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   textoHome: {
     position: 'absolute',
@@ -281,14 +281,14 @@ export default StyleSheet.create({
   textoHomeBranco: {
     fontSize: 20,
     color: '#000000',
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   textoFisio: {
     fontSize: 36,
     color: '#FFFFFF',
     textAlign: 'center',
     marginLeft: 10,
-    fontFamily: 'Inter-Bold',
+    // fontFamily: 'Inter-Bold',
   },
 
 });

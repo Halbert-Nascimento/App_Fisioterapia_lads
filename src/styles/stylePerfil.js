@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     marginTop: 5,
-    fontFamily: 'Inter-Bold',
+    // fontFamily: 'Inter-Bold',
   },
   scrollContainer: {
     flex: 1,
