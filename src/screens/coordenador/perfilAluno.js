@@ -49,14 +49,17 @@ export default function PerfilAluno() {
 
                         
                     </View>
-                    {/* <Image source={logoIesgo} style={styles.bottomButton} /> */}
+                    <View style={styles.imageContainerBt}>
+                        {/* <Image source={logoIesgo} style={styles.image}  /> */}
+                    </View>
+                   
 
-                    {/* <TouchableOpacity  style={styles.bottomButton}>
+                    <TouchableOpacity  style={styles.bottomButton}>
                         <View  style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Text  style={{ color: 'white', fontSize: 16, marginRight: 5, fontWeight: 'bold' }}>Enviar</Text>
+                            <Text  style={styles.textsalvar}>Salvar Alterações</Text>
                             <Image source={enviarIcon} style={styles.enviar} />
                         </View>
-                    </TouchableOpacity> */}
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
@@ -83,54 +86,33 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 30,
     },
+    
+    imageContainerBt: {
+        width: '80%',
+        height: 69,
+        alignItems: 'center',
+        marginTop: 30,
+        marginBottom: 30,
+        backgroundColor: '#00005e',
+        borderBottomEndRadius: 10,
+        borderBottomStartRadius: 10,
+    },
+
     image: {
         width: 230,
         height: 50,
     },
 
     bottomContainer: {
-        width: '80%',
-        borderWidth: 1,
-        borderColor: 'gray',
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+        width: '80%',       
+        borderRadius: 10,
         marginTop: 30,
         padding: 10,
-        paddingBottom: 200,
+        // paddingBottom: 200,
     },
-    button: {
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        borderRadius: 10,
-        paddingVertical: 8,
-        paddingHorizontal: 12,
-        borderWidth: 1,
-        borderColor: 'gray',
-    },
-    buttonText: {
-        fontSize: 16,
-        fontStyle: 'italic',
-        marginLeft: 10,
-    },
-    // upload: {
-    //     width: 25,
-    //     height: 25,
-    //     marginLeft: 'auto',
-    //     marginRight: 'auto',
-    // },
-    booleanContainer: {
-        marginTop: 20,
-    },
-    booleanText: {
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    booleanOptions: {
-        flexDirection: 'row',
-        marginTop: 10,
-    },
+
+
+
     optionButton: {
         paddingHorizontal: 10,
         paddingVertical: 5,
@@ -140,25 +122,35 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'gray',
     },
-    optionText: {
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    optionSelected: {
-        backgroundColor: '#00005D',
-    },
-    optionSelectedText: {
-        color: 'white',
-    },
+
+
     bottomButton: {
-        backgroundColor: '#00005D',
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
-        padding: 10,
+        // backgroundColor: '#00005D',
+        height: 50,
+        justifyContent: 'center',
+        borderRadius: 10,
+        padding: 8,
         width: '80%',
-        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: 'gray',
+        
+        
     },
     enviar: {
-        marginRight: 0,
+        backgroundColor: '#00005D',  
+       position: 'absolute',
+       right: -10,
+        width: 55,
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
+        // marginRight: 0,
+    },
+    textsalvar:{
+        color: 'grey', 
+        fontSize: 15, 
+        marginRight: 5, 
+        fontWeight: 'bold', 
+        
+
     }
 });
