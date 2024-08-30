@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image, Button } from 'react-native';
 import ModalAgendamentoCoord from './pacienteModalAgendamentoCoord';
 import button from '../../../assets/button.png';
@@ -18,24 +18,8 @@ import CancelModal from './pacienteCancelModal';
 
 // export default RelatorioPaciente;
 
-const fisioterapeutaAluno = "Fulano D. S."
-
-
-const pacientes = [
-  { pacientes: 'Pedro', dataConsulta: '00/00/00', fisioetapeuta: fisioterapeutaAluno, status: 'aceito' },
-  { pacientes: 'Maria', dataConsulta: '01/01/01', fisioterapeuta: fisioterapeutaAluno, status: 'aceito' },
-  { pacientes: 'Junio', dataConsulta: '00/00/00', fisioetapeuta: fisioterapeutaAluno, status: 'cancelado' },
-  { pacientes: 'Maria', dataConsulta: '00/00/00', fisioetapeuta: fisioterapeutaAluno, status: 'pendente' },
-  { pacientes: 'João', dataConsulta: '02/02/02', fisioterapeuta: fisioterapeutaAluno, status: 'aceito' },
-  { pacientes: 'Ana', dataConsulta: '03/03/03', fisioterapeuta: fisioterapeutaAluno, status: 'aceito' },
-  { pacientes: 'Carlos', dataConsulta: '04/04/04', fisioterapeuta: fisioterapeutaAluno, status: 'aceito' },
-  { pacientes: 'Beatriz', dataConsulta: '05/05/05', fisioterapeuta: fisioterapeutaAluno, status: 'aceito' }
-]
-
-  
-
-
-
+// buscar dados dos pacientes em um arquivo json simulando o backend
+import pacientesData from "../../../data/dataPacientesAll.json"; //alterar para url
 
 
 
@@ -88,6 +72,14 @@ const RelatorioPacientes = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedStatus, setSelectedStatus] = useState(null);
 
+  //buscando dados do arquivo json *******
+  const [pacientes, setPacientes] = useState([]);
+  useEffect(() => {
+    // Carrega os dados do JSON quando o componente é montado
+    setPacientes(pacientesData); 
+  }, []);
+  //************** */
+
   const handleButtonPress = (status) => {
     setSelectedStatus(status);
     setModalVisible(true);
@@ -106,7 +98,7 @@ const RelatorioPacientes = () => {
             <StudentsCard
               pacientes={item.pacientes}
               dataConsulta={item.dataConsulta}
-              fisioetapeuta={item.fisioetapeuta}
+              fisioetapeuta={item.fisioterapeuta}
               status={item.status}
               onPress={handleButtonPress}
             />

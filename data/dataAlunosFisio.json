@@ -1,0 +1,17 @@
+[
+    {
+      "nome": "Dr. João Santos",
+      "semestre": "N/A",
+      "pacientes": 6
+    },
+    {
+      "nome": "Dra. Maria Oliveira",
+      "semestre": "N/A",
+      "pacientes": 6
+    },
+    {
+      "nome": "Dr. Pedro Fernandes",
+      "semestre": "N/A",
+      "pacientes": 3
+    }
+]

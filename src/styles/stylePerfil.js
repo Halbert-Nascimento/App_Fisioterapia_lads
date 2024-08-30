@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     boxShadow: '0px 2px 4px #00000040',
     elevation: 5,
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
     fontStyle: 'italic',
   },
   loginButton: {
@@ -94,14 +94,14 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     top: 10,
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   textomf: {
     color: '#000000',
     fontWeight: 'bold',
     fontSize: 12,
     textAlign: 'center',
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
   espacoPicker: {
     height: 40,
@@ -160,7 +160,7 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     color: '#fff',
     fontStyle: 'bold',
-    fontFamily: 'Inter-Regular',
+    // fontFamily: 'Inter-Regular',
   },
 });
 

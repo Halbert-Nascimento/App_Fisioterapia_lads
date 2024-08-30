@@ -1,19 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image } from 'react-native';
 import button from '../../../assets/button.png';
 import ModalStundets from './modalStundets';
 
-const students = [
-  { nome: 'Junio', semestre: '5º', pacientes: 5 },
-  { nome: 'Maria', semestre: '4º', pacientes: 3 },
-  { nome: 'Pedro', semestre: '6º', pacientes: 4 },
-  { nome: 'Junio', semestre: '5º', pacientes: 5 },
-  { nome: 'Maria', semestre: '4º', pacientes: 3 },
-  { nome: 'Pedro', semestre: '6º', pacientes: 4 },
-  { nome: 'Junio', semestre: '5º', pacientes: 5 },
-  { nome: 'Maria', semestre: '4º', pacientes: 3 },
-  { nome: 'Pedro', semestre: '6º', pacientes: 4 },
-];
+import dataAlunos from  "../../../data/dataAlunosFisio.json"; // importa alunos do arquivo json
 
 const StudentsCard = ({ nome, semestre, pacientes, onPress }) => (
   <View style={styles.card}>
@@ -37,6 +27,12 @@ const StudentsCard = ({ nome, semestre, pacientes, onPress }) => (
 
 const Students = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    setStudents(dataAlunos);  // Carrega os dados diretamente do JSON importado
+  }, []);
+ 
 
   const handleButtonPress = () => {
     setModalVisible(true);
