@@ -1,21 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-const setaIcon = require('./img/seta.png'); // Importe a imagem da seta
-const cancelarIcon = require('./img/cancelar.png');
-const xisIcon = require('./img/xis.png');
+const setaIcon = require('../../../assets/imagensPaciente/seta.png'); // Importe a imagem da seta
+const cancelarIcon = require('../../../assets/imagensPaciente/cancelar.png');
+const xisIcon = require('../../../assets/imagensPaciente/xis.png');
 
-export default function App() {
+export default function CancelarAgendamento() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton}>
-          {/* Substitua a seta pelo componente Image */}
-          <Image source={setaIcon} style={styles.setaImage} />
-        </TouchableOpacity>
-        <Text style={styles.headerText}>Meus Agendamentos</Text>
-      </View>
+      
       <View style={styles.contentContainer}>
         <Image source={cancelarIcon} style={styles.image} />
         <Text style={styles.cancelText}>Formulário de solicitação de cancelamento:</Text>

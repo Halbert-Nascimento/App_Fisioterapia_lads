@@ -8,6 +8,7 @@ import MeusAgendamentos from "../screens/paciente/meusAgendamentos";
 import Perfil from "../screens/paciente/perfil";
 import Cadastro from "../screens/login_cadastro/cadastro";
 import Login from "../screens/login_cadastro/login";
+import CancelarAgendamento from "../screens/paciente/CancelarAgendamento"
 
 
 
@@ -35,6 +36,7 @@ export default function Test_RoutesPaciente(){
       <Drawer.Screen name="Meu perfil" component={Perfil} />
       <Drawer.Screen name="Cadastro" component={Cadastro} />
       <Drawer.Screen name="Login" component={Login} />
+      <Drawer.Screen name="Cancelar Agendamento" component={CancelarAgendamento} />
           
     </Drawer.Navigator>   
 
