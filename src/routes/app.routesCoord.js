@@ -13,6 +13,9 @@ import Prontuario from "../screens/coordenador/prontuario";
 import pacientes from "../screens/coordenador/queryPacientes"
 
 
+import SalvarAgendamento from "../screens/coordenador/salvarAgendamento"
+import PerfilAluno from "../screens/coordenador/perfilAluno"
+
 // importar para navegão stack
 // import PatientStack from './StackNavigator'; // posso apagar esse tela não esta usando
 
@@ -49,6 +52,8 @@ export default function AppRoutesCoord(){
         {/* <Drawer.Screen name="Detalhes do Aluno (remover)" component={StudentDetails} /> */}
         <Drawer.Screen name="Detalhes do Paciente (remover)" component={PatientDetails} />
         <Drawer.Screen name="Prontuario (remover)" component={Prontuario} />
+        <Drawer.Screen name="Salvar Agendamento (remover)" component={SalvarAgendamento} />
+        <Drawer.Screen name="Perfil Aluno" component={PerfilAluno} />
         
       
       </Drawer.Navigator>   

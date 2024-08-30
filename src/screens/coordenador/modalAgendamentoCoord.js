@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 const ModalAgendamentoCoord = ({ modalVisible, closeModal }) => {
+  const navigation = useNavigation();
   return (
     <Modal
       visible={modalVisible}
@@ -20,7 +22,7 @@ const ModalAgendamentoCoord = ({ modalVisible, closeModal }) => {
           <TouchableOpacity style={styles.modalButton} onPress={closeModal}>
             <Text style={styles.modalButtonText}>Ficha de Evolução</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.modalButton} onPress={closeModal}>
+          <TouchableOpacity style={styles.modalButton} onPress={()=>{{closeModal} navigation.navigate('Prontuario (remover)') }}>
             <Text style={styles.modalButtonText}>Primeira Consulta/Prontuario</Text>
           </TouchableOpacity>
         </View>
