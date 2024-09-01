@@ -8,7 +8,9 @@ import AppRoutesCoord from './src/routes/app.routesCoord'; // rota screens coode
 import AppRoutesPaciente from './src/routes/app.routesPaciente';
 import AppRoutesFisio from './src/routes/app.routesFisio';
 
-import Juncao from './src/screens/juncaoTeste/juncao'
+import Juncao from './src/screens/juncaoTeste/juncao';
+import Cadastro from './src/screens/login_cadastro/cadastro';
+import Login from './src/screens/login_cadastro/login';
 
 
 
@@ -43,12 +45,17 @@ export default function App() {
     //   <Juncao/>
     // </NavigationContainer>
 
-    <NavigationContainer>
+    <NavigationContainer>  
+
       <Stack.Navigator initialRouteName="Juncao" >
         <Stack.Screen name="Juncao" component={Juncao} options={{ headerShown: false }} />
+
         <Stack.Screen name="AppRoutesCoord" component={AppRoutesCoord} options={{ headerShown: false }}/>
         <Stack.Screen name="AppRoutesFisio" component={AppRoutesFisio} options={{ headerShown: false }}/>
         <Stack.Screen name="AppRoutesPaciente" component={AppRoutesPaciente} options={{ headerShown: false }}/>
+
+        <Stack.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
     

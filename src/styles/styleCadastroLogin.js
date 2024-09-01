@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
     width: '100%',
+    marginTop: 50,
   },
   header: {
     width: '100%',

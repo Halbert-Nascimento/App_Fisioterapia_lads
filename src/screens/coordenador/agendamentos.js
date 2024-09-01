@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image } from 'react-native';
-import ModalAgendamentoCoord from './modalAgendamentoCoord';
+import ModalAgendamentoCoord from './ModalAgendamentoCoord';
 import button from '../../../assets/button.png';
 import iconPendente from '../../../assets/pendente.png';
 import iconCancelado from '../../../assets/cancelado.png';

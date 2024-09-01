@@ -16,14 +16,9 @@ export default function Cadastro() {
     return (
         <View style={styles.container}>
             <ScrollView contentContainerStyle={{ alignItems: 'center' }} style={styles.scrollContainer}>
-                {/* <View style={styles.header}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.backButton}>
-                        <Image source={require('../../../assets/imagensPaciente/Voltar.png')} style={styles.backButtonImage} />
-                    </TouchableOpacity>
-                </View> */}
-                
+                              
                 <Image source={require('../../../assets/imagensPaciente/Logo_iesgo.png')} style={styles.image} />
-                <Text style={styles.textLogin}>Create your Account</Text>
+                <Text style={styles.textLogin}>Criar sua conta</Text>
                 
                 <View style={styles.input}>
                     <TextInput style={styles.textInput} placeholder='Nome completo: ' />
