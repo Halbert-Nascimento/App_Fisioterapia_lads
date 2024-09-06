@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-} from "react-native";
+import {StyleSheet, Text, View, TextInput, TouchableOpacity,Image, ScrollView , Alert} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CreateFisio() {
+  const navigation = useNavigation();
+
   const [nome, setNome] = useState("");
   const [matricula, setMatricula] = useState("");
   const [semestre, setSemestre] = useState("");
@@ -21,10 +17,12 @@ export default function CreateFisio() {
   const [confirmSecureTextEntry, setConfirmSecureTextEntry] = useState(true);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  
+
+
   const toggleSecureEntry = () => {
     setSecureTextEntry((prev) => !prev);
   };
-
   const toggleConfirmSecureEntry = () => {
     setConfirmSecureTextEntry((prev) => !prev);
   };
@@ -62,7 +60,8 @@ export default function CreateFisio() {
     setPasswordError(!validatePasswords(password, text));
   };
 
-  const handleCadastroPress = () => {
+
+  async function cadastrarAluno() {
     if (!validateEmail(email)) {
       alert("Por favor, insira um email válido.");
       return;
@@ -71,8 +70,48 @@ export default function CreateFisio() {
       alert("As senhas são diferentes.");
       return;
     }
-    // Lógica para criar a conta do usuário
-    alert("Conta Criada com sucesso");
+    
+    const url = 'http://189.6.22.122:12010/Fisioterapeuta';
+    const dados = {
+      "idFisio": 0,
+      "nomeFisio": nome,
+      "emailFisio": email,
+      "matricula": matricula,
+      "SemestreFisio": semestre,
+      "password" : password,
+      "tipoUsuario": 2   
+    }
+
+    try{
+      const token = await AsyncStorage.getItem('token');
+      if(!token){
+        Alert.alert("Error","Token não encontrador. Faça login novamente! ");
+        return;
+      }
+
+      const response = await fetch(url,{
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // adicionando o token no header
+        },
+        body: JSON.stringify(dados)
+      });
+      if(response.ok){
+        const jsonResponse = await response.json();
+        console.log('Aluno fisioterapeuta criado com sucesso!', jsonResponse);
+        Alert.alert("Sucesso", "Conta do Aluno fisioterapeuta criado com sucesso.");
+        navigation.navigate('Gerenciar Alunos'); // redireciona para a tela com todos os alunos
+      }else{
+        const errorResponse = await response.json();
+        console.log('Error ao criar conta Aluno fisioterapeuta:', jsonResponse);
+        Alert.alert("Error", "Falha ao criar conta Aluno fisioterapeuta. Verificar os dados.");
+      }
+
+    }catch(error){
+      console.log('Error na requisição:', error);
+      Alert.alert("Error", "Ocorreu um error na requisição. tente novamente.");
+    }
   };
 
   return (
@@ -147,7 +186,7 @@ export default function CreateFisio() {
         )}
         <TouchableOpacity
           style={styles.button}
-          onPress={handleCadastroPress}
+          onPress={cadastrarAluno}
           disabled={
             !validateEmail(email) ||
             !validatePasswords(password, confirmPassword)

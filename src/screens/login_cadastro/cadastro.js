@@ -18,7 +18,7 @@ export default function Cadastro() {
             <ScrollView contentContainerStyle={{ alignItems: 'center' }} style={styles.scrollContainer}>
                               
                 <Image source={require('../../../assets/imagensPaciente/Logo_iesgo.png')} style={styles.image} />
-                <Text style={styles.textLogin}>Criar sua conta</Text>
+                <Text style={styles.textLogin}>Criar conta paciente</Text>
                 
                 <View style={styles.input}>
                     <TextInput style={styles.textInput} placeholder='Nome completo: ' />

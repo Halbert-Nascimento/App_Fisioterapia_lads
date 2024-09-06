@@ -51,12 +51,12 @@ const Juncao = () => {
             />
             <Text style={styles.textoBotao}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Cadastro')}>
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('CadastroCoordenador')}>
             <Image
               source={require("../../../assets/report-svgrepo-com.png")}
               style={styles.imagemBotao}
             />
-            <Text style={styles.textoBotao}>Cadastro</Text>
+            <Text style={styles.textoBotao}>Cadastro Coord</Text>
           </TouchableOpacity>
 
         </View>

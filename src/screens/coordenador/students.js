@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import button from '../../../assets/button.png';
 import ModalStundets from './modalStundets';
 
 import dataAlunos from  "../../../data/dataAlunosFisio.json"; // importa alunos do arquivo json
+
 
 const StudentsCard = ({ nome, semestre, pacientes, onPress }) => (
   <View style={styles.card}>
@@ -29,8 +31,44 @@ const Students = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [students, setStudents] = useState([]);
 
-  useEffect(() => {
-    setStudents(dataAlunos);  // Carrega os dados diretamente do JSON importado
+  // useEffect(() => {
+  //   setStudents(dataAlunos);  // Carrega os dados diretamente do JSON importado
+  // }, []);
+
+  const queryAllAlunos = async () =>{
+    const url = 'http://189.6.22.122:12010/Fisioterapeuta';
+    try{
+      const token = await AsyncStorage.getItem('token');
+      if (!token) {
+        Alert.alert("Erro", "Token não encontrado. Faça login novamente.");
+        return;
+      }
+
+      const response = await fetch(url, {
+        method: 'GET',
+        headers:{
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if(response.ok){
+        const data = await response.json();
+        console.log(data);
+        setStudents(data); // Atualiza o estado com os dados recebidos
+      }else{
+        const errorResponse = await response.json();
+        console.error('Erro ao buscar alunos:', errorResponse);
+        Alert.alert("Erro", "Falha ao carregar dados dos alunos.");
+      }
+
+    }catch(error){
+      console.error('Erro na requisição:', error);
+      Alert.alert("Erro", "Ocorreu um erro na requisição. Tente novamente.");
+    }
+  };
+
+  useEffect(() =>{
+    queryAllAlunos();
   }, []);
  
 
@@ -49,9 +87,9 @@ const Students = () => {
           data={students}
           renderItem={({ item }) => (
             <StudentsCard
-              nome={item.nome}
-              semestre={item.semestre}
-              pacientes={item.pacientes}
+              nome={item.nomeFisio}
+              semestre={item.semestreFisio}
+              pacientes={"Implementar"}
               onPress={handleButtonPress}
             />
           )}
