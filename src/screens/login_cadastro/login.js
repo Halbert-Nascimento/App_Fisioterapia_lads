@@ -3,7 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, Alert } fro
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "../../styles/styleCadastroLogin";
-import { tokens } from "react-native-paper";
+import decodeJWT from '../../utils/jwtDecode';
+
 
 export default function Login() {
   const navigation = useNavigation();
@@ -37,13 +38,35 @@ export default function Login() {
         //salvando o token jwt no AsyncStorege
         await AsyncStorage.setItem('token', jsonResponse.token);
 
-        console.log("Login realizado com sucesso", jsonResponse); // para debug remover
-        Alert.alert("Login", "Login realizado com sucesso!"); // debug remover
-        Alert.alert('Token JWT', jsonResponse.token); //debug remover
+        
+        // Decodificar o token JWT para extrair o campo roles
+        const token = jsonResponse.token;
+        const decodedToken = decodeJWT(token); // Decodifica o token
+        const roles = decodedToken.Role; // Extrai o campo roles do token
 
-        //redirecionamento para outra tela (modificar posteriomente e fazer logica para redirecionar automaticamente para tela de acordo com o perfil 
-        // do logado, paciente aluno/fiso. coodenador)
-        navigation.navigate('Juncao');
+        //######## debug remover
+        console.log("Login realizado com sucesso", jsonResponse); // para debug remover
+        console.log('Token JWT:', jsonResponse.token); //debug remover
+        console.log("decodedToken:", decodedToken);
+        console.log("decodedToken roles:", decodedToken.Role);
+        console.log("decodedToken nome:", decodedToken.Nome);
+        //###########
+
+
+        // Verifica os roles e redireciona com base no perfil
+        if (roles.includes('Coordenador')) {
+          Alert.alert("Bem-vindo", "Coordenador logado com sucesso!");
+          navigation.navigate('AppRoutesCoord');
+
+        } else if (roles.includes('Admin')) {
+          Alert.alert("Bem-vindo", "Admin logado com sucesso!");
+          navigation.navigate('AppRoutesFisio');
+
+        }else{
+          Alert.alert("Bem-vindo", "Paciente logado com sucesso!");
+          navigation.navigate('AppRoutesPaciente');
+
+        }
       }else{
         const errorResponse = await response.json();
         console.log("Error ao realizar login: ", errorResponse);
@@ -57,6 +80,7 @@ export default function Login() {
     }
   }
   
+
   return (
     <View style={styles.container}>
       <Image source={require('../../../assets/imagensPaciente/Logo_iesgo.png')} style={styles.image} />

@@ -66,6 +66,7 @@ const Agendamentos = () => {
 
   const queryAllPacientes = async ()=>{
     const url = 'http://189.6.22.122:12010/Paciente';
+    // const url = 'http://189.6.22.122:8081/agendamentos';
     try{
       const token = await AsyncStorage.getItem('token');
       if (!token) {
