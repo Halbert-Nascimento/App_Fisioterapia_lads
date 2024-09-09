@@ -7,6 +7,22 @@ import { Picker } from "@react-native-picker/picker";
 export default function Cadastro() {
     const navigation = useNavigation();
 
+    //criar useState para nome, cpf, cep, uf, endereco, email, senha, confirmar senha, data de nascimento, sexo, profissao, telefone, estado civil
+    const [nome, setNome] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [cep, setCep] = useState('');
+    const [uf, setUf] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [confirmaSenha, setConfirmaSenha] = useState('');
+    const [dataNascimento, setDataNascimento] = useState('');
+    const [sexo, setSexo] = useState('');
+    const [profissao, setProfissao] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [estadoCivil, setEstadoCivil] = useState('');
+    
+
     const [generoselect, setgenero] = useState('');
     const selectGenero = (generomf) => {
         setgenero(generomf);
