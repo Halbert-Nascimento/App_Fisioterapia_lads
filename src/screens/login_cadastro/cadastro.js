@@ -13,6 +13,7 @@ export default function Cadastro() {
     const [cep, setCep] = useState('');
     const [uf, setUf] = useState('');
     const [endereco, setEndereco] = useState('');
+    const [numCasa, setNumCasa] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [confirmaSenha, setConfirmaSenha] = useState('');
@@ -20,7 +21,7 @@ export default function Cadastro() {
     const [sexo, setSexo] = useState('');
     const [profissao, setProfissao] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [estadoCivil, setEstadoCivil] = useState('');
+    const [estadoCivil, setEstadoCivil] = useState('solteiro');
     
 
     const [generoselect, setgenero] = useState('');
@@ -37,12 +38,41 @@ export default function Cadastro() {
                 <Text style={styles.textLogin}>Criar conta paciente</Text>
                 
                 <View style={styles.input}>
-                    <TextInput style={styles.textInput} placeholder='Nome completo: ' />
-                    <TextInput style={styles.textInput} placeholder='CPF: 000.000.000-00 ' />
-                    <TextInput style={styles.textInput} placeholder='Cep: 73807775' />
-                    <TextInput style={styles.textInput} placeholder='UF: GO' />
-                    <TextInput style={styles.textInput} placeholder='Endereço: Rua das ruas' />
-                    <TextInput style={styles.textInput} placeholder='Numero da casa: 1001' />
+                    <TextInput style={styles.textInput} 
+                        placeholder='Nome completo: ' 
+                        value={nome}
+                        onChangeText={setNome}
+                    />
+
+                    <TextInput style={styles.textInput} 
+                        placeholder='CPF: 000.000.000-00 ' 
+                        value={cpf}
+                        onChangeText={setCpf}
+                    />
+
+                    <TextInput style={styles.textInput} 
+                        placeholder='Cep: 73807775' 
+                        value={cep}
+                        onChangeText={setCep}
+                    />
+
+                    <TextInput style={styles.textInput} 
+                        placeholder='UF: GO' 
+                        value={uf}
+                        onChangeText={setUf}    
+                    />
+
+                    <TextInput style={styles.textInput} 
+                        placeholder='Endereço: Rua das ruas' 
+                        value={endereco}
+                        onChangeText={setEndereco}                    
+                    />
+
+                    <TextInput style={styles.textInput} 
+                        placeholder='Numero da casa: 1001' 
+                        value={numCasa}
+                        onChangeText={setNumCasa}
+                    />
                     <TextInput style={styles.textInput} placeholder='Email: email@email.com' />
                     <TextInput style={styles.textInput} placeholder='Password: ***************' secureTextEntry={true} />
                     <TextInput style={styles.textInput} placeholder='Confirm password: ***************' secureTextEntry={true} />
@@ -66,8 +96,8 @@ export default function Cadastro() {
                     <View style={styles.espacoPicker}>
                         <Text style={styles.pickerTexto}>Estado Civil: </Text>
                         <Picker
-                            selectedValue={selectedValue}
-                            onValueChange={(itemValue) => setSelectedValue(itemValue)}
+                            selectedValue={estadoCivil}
+                            onValueChange={(itemValue) => setEstadoCivil(itemValue)}
                             style={styles.estadocivil}
                         >
                             <Picker.Item label="Solteiro" value="solteiro" />
