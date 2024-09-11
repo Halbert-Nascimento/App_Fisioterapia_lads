@@ -10,7 +10,8 @@ import StudentDetails from "../screens/coordenador/studentDetails";
 // import Patient from "../screens/coordenador/patient";
 import PatientDetails from "../screens/coordenador/patientDetails";
 import Prontuario from "../screens/coordenador/prontuario";
-import pacientes from "../screens/coordenador/queryPacientes"
+import pacientes from "../screens/coordenador/queryPacientes";
+import VisualizarCancelamento from "../screens/coordenador/VisualizarCancelamento";
 
 
 import SalvarAgendamento from "../screens/coordenador/salvarAgendamento"
@@ -54,6 +55,7 @@ export default function AppRoutesCoord(){
         <Drawer.Screen name="Prontuario (remover)" component={Prontuario} />
         <Drawer.Screen name="Salvar Agendamento (remover)" component={SalvarAgendamento} />
         <Drawer.Screen name="Perfil Aluno" component={PerfilAluno} />
+        <Drawer.Screen name="Cancelamentos" component={VisualizarCancelamento} />
         
       
       </Drawer.Navigator>   
