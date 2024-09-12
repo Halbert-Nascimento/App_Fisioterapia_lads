@@ -52,7 +52,7 @@ export default function CadastroCoordenador() {
           navigation.navigate('login');
         }else{
           const errorResponse = await response.json();
-          console.log('Error ao criar conta Coordenador:', jsonResponse);
+          console.log('Error ao criar conta Coordenador:', errorResponse);
           Alert.alert("Error", "Falha ao criar conta. Verificar os dados.");
         }        
       }
