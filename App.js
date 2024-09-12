@@ -47,8 +47,8 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>  
-
-      <Stack.Navigator initialRouteName="Juncao" >
+      {/* mudar para login apos testes junção ficara para admin */}
+      <Stack.Navigator initialRouteName="Juncao" >  
         <Stack.Screen name="Juncao" component={Juncao} options={{ headerShown: false }} />
 
         <Stack.Screen name="AppRoutesCoord" component={AppRoutesCoord} options={{ headerShown: false }}/>
