@@ -60,9 +60,13 @@ export default function Login() {
 
         } else if (roles.includes('Admin')) {
           Alert.alert("Bem-vindo", "Admin logado com sucesso!");
+          navigation.navigate('AppRoutesCoord'); // crair uma rota para admin e pag de administração
+
+        }else if (roles.includes('Fisioterapeuta')) {
+          Alert.alert("Bem-vindo", "Aluno logado com sucesso!");
           navigation.navigate('AppRoutesFisio');
 
-        }else{
+        } else{
           Alert.alert("Bem-vindo", "Paciente logado com sucesso!");
           navigation.navigate('AppRoutesPaciente');
 
