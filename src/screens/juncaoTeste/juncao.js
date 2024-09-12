@@ -59,6 +59,22 @@ const Juncao = () => {
             <Text style={styles.textoBotao}>Cadastro Coord</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Cadastro')}>
+            <Image
+              source={require("../../../assets/report-svgrepo-com.png")}
+              style={styles.imagemBotao}
+            />
+            <Text style={styles.textoBotao}>Cadastro paciente</Text>
+          </TouchableOpacity>
+
+          {/* <TouchableOpacity style={styles.botaoServico} onPress={() => navigation.navigate('Cadastrar Aluno')}>
+            <Image
+              source={require("../../../assets/report-svgrepo-com.png")}
+              style={styles.imagemBotao}
+            />
+            <Text style={styles.textoBotao}>Cadastro Aluno</Text>
+          </TouchableOpacity> */}
+
         </View>
       </View>
     </View>
