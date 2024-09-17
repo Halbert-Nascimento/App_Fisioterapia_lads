@@ -7,6 +7,9 @@ const logoIesgo = require('../../../assets/iesgo.png');
 const uploadIcon = require('../../../assets/imagensPaciente/upload.png');
 const enviarIcon = require('../../../assets/imagensPaciente/enviar.png');
 const setaIcon = require('../../../assets/imagensPaciente/seta.png');
+const logoBranco =require('../../../assets/logoBranco.png');
+
+
 
 
 export default function PerfilAluno() {
@@ -14,6 +17,9 @@ export default function PerfilAluno() {
     const [primeiraConsulta, setPrimeiraConsulta] = useState(null);
 
     return (
+
+       
+
         <View style={styles.container}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 <View style={styles.imageContainer}>
@@ -50,7 +56,7 @@ export default function PerfilAluno() {
                         
                     </View>
                     <View style={styles.imageContainerBt}>
-                        {/* <Image source={logoIesgo} style={styles.image}  /> */}
+                        <Image source={logoBranco} style={styles.image}  />
                     </View>
                    
 
@@ -101,6 +107,7 @@ const styles = StyleSheet.create({
     image: {
         width: 230,
         height: 50,
+        top:5,
     },
 
     bottomContainer: {
