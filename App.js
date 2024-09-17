@@ -12,6 +12,7 @@ import Juncao from './src/screens/juncaoTeste/juncao';
 import Cadastro from './src/screens/login_cadastro/cadastro';
 import Login from './src/screens/login_cadastro/login';
 
+import CadastroCoordenador from './src/screens/login_cadastro/cadastro_coodenador';
 
 
 
@@ -46,8 +47,8 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>  
-
-      <Stack.Navigator initialRouteName="Juncao" >
+      {/* mudar para login apos testes junção ficara para admin */}
+      <Stack.Navigator initialRouteName="Juncao" >  
         <Stack.Screen name="Juncao" component={Juncao} options={{ headerShown: false }} />
 
         <Stack.Screen name="AppRoutesCoord" component={AppRoutesCoord} options={{ headerShown: false }}/>
@@ -55,6 +56,7 @@ export default function App() {
         <Stack.Screen name="AppRoutesPaciente" component={AppRoutesPaciente} options={{ headerShown: false }}/>
 
         <Stack.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false }}/>
+        <Stack.Screen name="CadastroCoordenador" component={CadastroCoordenador} options={{ headerShown: false }}/>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
