@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "../../styles/styleHomeGeral";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import decodeJWT from '../../utils/jwtDecode';
 
 export default function Home() {
   const navigation = useNavigation();
+  const [nome, setNome] = useState('Pacient'); // Estado para armazenar o nome do usuário
+
+  // Função para buscar o token e decodificar o nome
+  useEffect(() => {
+    async function fetchToken() {
+      try {
+        const token = await AsyncStorage.getItem('token'); // Aguarda o token
+        if (token) {
+          const decodedToken = decodeJWT(token); // Decodifica o token
+          setNome(decodedToken.Nome); // Atualiza o estado com o nome
+        } else {
+          console.log("Token não encontrado.");
+        }
+      } catch (error) {
+        console.log("Erro ao buscar o token:", error);
+      }
+    }
+
+    fetchToken(); // Chama a função quando o componente é montado
+  }, []);
+
   return (
     <View style={styles.viewAzul}>
       <View style={styles.viewTopo}>
@@ -13,7 +35,7 @@ export default function Home() {
         {/* <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
           <Image source={require('../../../assets/imagensPaciente/Foto.png')} style={Imagemperfil} />
         </TouchableOpacity> */}
-      <Text style={styles.textoHome}>Olá, Paciente</Text>
+      <Text style={styles.textoHome}>Olá, {nome}</Text>
         <Image
           source={require("../../../assets/Logo_iesgo.png")}
           style={styles.logoIesgo}
