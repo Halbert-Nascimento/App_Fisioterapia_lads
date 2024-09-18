@@ -9,5 +9,18 @@ query todos alunos:
   [{"cpf": "string", "dataDeNascimento": "2024-06-12T19:02:34.906Z", "diagnosticoClinico": "string", "diagnosticoFisio": "string", "emailPaciente": "TestePaciente3@example.com", "endereco": "string", "idPaciente": 3, "nomePaciente": "string", "numeroCasa": "string", "password": null, "primeiraConsulta": true, "proficao": "string", "sexo": "m", "tipoUsuario": 4, "uf": "string", "usuario": null}, {"cpf": "string", "dataDeNascimento": "2024-06-12T19:02:34.906Z", "diagnosticoClinico": "string", "diagnosticoFisio": "string", "emailPaciente": "TestePaciente@example.com", "endereco": "string", "idPaciente": 1, "nomePaciente": "string", "numeroCasa": "string", "password": null, "primeiraConsulta": false, "proficao": "string", "sexo": "m", "tipoUsuario": 4, "uf": "string", "usuario": null}, {"cpf": "string", "dataDeNascimento": "2024-06-12T19:02:34.906Z", "diagnosticoClinico": "string", "diagnosticoFisio": "string", "emailPaciente": "TestePaciente2@example.com", "endereco": "string", "idPaciente": 2, "nomePaciente": "string", "numeroCasa": "string", "password": null, "primeiraConsulta": false, "proficao": "string", "sexo": "m", "tipoUsuario": 4, "uf": "string", "usuario": null}]
 
 
+
   chave :
   {"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibGFkc2Nvb3JkZW5hZG9yQHRlc3RlLmNvbSIsIlVzZXJJZCI6IjE1IiwiUm9sZSI6WyJDb29yZGVuYWRvciIsIkNvb3JkZW5hZG9yIl0sIk5vbWUiOiJMYWRzIENvb3JkZW5hZG9yIFRlc3RlIiwiRW1haWwiOiJsYWRzY29vcmRlbmFkb3JAdGVzdGUuY29tIiwiZXhwIjoxNzI1NzEwNjIzfQ.w0j6xa3ZZdsenoz3eIpfFrY4Ioa6DQYP_JNy_6Y4ze8"}
+
+
+paciente para teste
+ellen@teste.com
+asdf1234$$
+Token JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZWxsZW5AdGVzdGUuY29tIiwiVXNlcklkIjoiNTgiLCJSb2xlIjpbIlBhY2llbnRlIiwiUGFjaWVudGUiXSwiSWQiOiI1OCIsIk5vbWUiOiJFbGxlbiAgU2FudG9zIiwiRW1haWwiOiJlbGxlbkB0ZXN0ZS5jb20iLCJDUEYiOiI5OTk5OTk5OTk5OSIsIlVGIjoiR08iLCJFbmRlcmXDp28iOiJSdWEgMTUgZm9ybW9zaW5oYSIsIk51bWVybyBDYXNhIjoiMTAwNSIsIkRhdGEgTmFzY2ltZW50byI6IjE5OTMtMDgtMDIiLCJTZXhvIjoiRiIsIlByb2ZpY2FvIjoiRW5mZXJtZWlybyIsIkRpYWdub3N0aWNvIGZpc2lvIjoiTsOjbyBjb25zdGEiLCJEaWFnbm9zdGljbyBjbGluaWNvIjoiTmFkYSIsIlByaW1laXJhIENvbnN1bHRhPyI6IlRydWUiLCJleHAiOjE3MjY2OTQ3MDR9.zxFpabT43mU0dfWgvZ-rfMgKxvXH12JssS2XpdRMLvE
+
+ LOG  decodedToken: {"CPF": "99999999999", "Data Nascimento": "1993-08-02", "Diagnostico clinico": "Nada", "Diagnostico fisio": "Não consta", "Email": "ellen@teste.com", "Endereço": "Rua 15 formosinha", "Id": "58", "Nome": "Ellen  Santos", "Numero Casa": "1005", "Primeira Consulta?": "True", "Proficao": "Enfermeiro", "Role": ["Paciente", "Paciente"], "Sexo": "F", "UF": "GO", "UserId": "58", "exp": 1726694704, "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "ellen@teste.com"}
+ LOG  decodedToken roles: ["Paciente", "Paciente"]
+ LOG  decodedToken nome: Ellen  Santos
+
+
