@@ -23,4 +23,7 @@ Token JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2Fw
  LOG  decodedToken roles: ["Paciente", "Paciente"]
  LOG  decodedToken nome: Ellen  Santos
 
+ decodedToken: {"CPF": "99999999999", "Data Nascimento": "1993-08-02", "Diagnostico clinico": "Nada", "Diagnostico fisio": "Não consta", "Email": "ellen@teste.com", "Endereço": "Rua 15 formosinha", "Id": "58", "Nome": "Ellen  Santos", "Numero Casa": "1005", "Primeira Consulta?": "True", "Proficao": "Enfermeiro", "Role": ["Paciente", "Paciente"], "Sexo": "F", "UF": "GO", "UserId": "58", "exp": 1726700409, "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "ellen@teste.com"}
+ LOG  decodedToken roles: ["Paciente", "Paciente"]
+ LOG  decodedToken nome: Ellen  Santos
 
