@@ -20,15 +20,15 @@ const StudentsCard = ({ pacientes, dataConsulta, fisioetapeuta, status, onPress 
   let cardColor, iconSource;
 
   switch (status) {
-    case 'cancelado':
+    case 'Cancelado':
       cardColor = '#9b2022';
       iconSource = iconCancelado;
       break;
-    case 'pendente':
+    case 'Pendente':
       cardColor = '#E2C83b';
       iconSource = iconPendente;
       break;
-    case 'aceito':
+    case 'Aceito':
       cardColor = '#00005d';
       iconSource = button;
       break;
@@ -65,8 +65,8 @@ const Agendamentos = () => {
   const [pacientes, setPaciente] = useState([]);
 
   const queryAllPacientes = async ()=>{
-    const url = 'http://189.6.22.122:12010/Paciente';
-    // const url = 'http://189.6.22.122:8081/agendamentos';
+    // const url = 'http://189.6.22.122:12010/Paciente';
+    const url = 'http://189.6.22.122:12012/agendamentos';
     try{
       const token = await AsyncStorage.getItem('token');
       if (!token) {
@@ -119,7 +119,7 @@ const Agendamentos = () => {
           renderItem={({ item }) => (
             <StudentsCard
               pacientes={item.nomePaciente}
-              dataConsulta={item.dataConsulta}
+              dataConsulta={item.data_agendamento}
               fisioetapeuta={item.fisioetapeuta}
               status={item.status}
               onPress={handleButtonPress}
